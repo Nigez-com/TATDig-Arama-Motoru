@@ -1,2 +1,2 @@
 # TATDig-Arama-Motoru
-Search engine powered by TATDig API
+TATDig API tarafından desteklenen arama motoru
