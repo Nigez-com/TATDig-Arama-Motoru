@@ -1,2 +1,3 @@
 # TATDig-Arama-Motoru
-TATDig API tarafından desteklenen arama motoru
+TATDig API kullanımına sahip web sitesinin çalışma örneği
+https://arama.nigez.com/
