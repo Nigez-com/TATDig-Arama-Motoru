@@ -14,7 +14,7 @@
     <center>
         <form>
             <input id="search" name="search" type="search" value="<?php echo $_GET['search']; ?>">
-            <input type="submit" id="go" name="go" value="Go!">
+            <input type="submit" id="go" name="go" value="ileri!">
         </form>
 <?php
     if( !array_key_exists('search',$_GET) || empty(trim($_GET['search'])) ){ ?>
@@ -35,7 +35,8 @@
  } ?>
 
         <h1>TATDig arama motoru</h1>
-    <p>Paging controller could be here</p>
+    <p>Çağrı denetleyicisi burada olabilir</p>
+    <p><a href="https://github.com/Nigez-com/TATDig-Arama-Motoru">Geliştirme kaynakları</a>
     </center>
 </div>
 </body>
