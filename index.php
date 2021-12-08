@@ -13,7 +13,7 @@
 <div id="content" class="vertical-center">
     <center>
         <form>
-            <input id="search" name="search" type="search" value="<?php echo $_GET['search']; ?>">
+            <input id="search" name="search" type="search" value="<?php echo ( array_key_exists('search', $_GET) ? $_GET['search'] : "" ); ?>">
             <input type="submit" id="go" name="go" value="ileri!">
         </form>
 <?php
