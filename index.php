@@ -14,7 +14,7 @@
     <center>
         <form>
             <input id="search" name="search" type="search" value="<?php echo ( array_key_exists('search', $_GET) ? $_GET['search'] : "" ); ?>">
-            <input type="submit" id="go" name="go" value="ileri!">
+            <input type="submit" id="go" value="ileri!">
         </form>
 <?php
     if( !array_key_exists('search',$_GET) || empty(trim($_GET['search'])) ){ ?>
