@@ -38,6 +38,9 @@
     <p>Çağrı denetleyicisi burada olabilir</p>
     <p><a href="https://github.com/Nigez-com/TATDig-Arama-Motoru">Geliştirme kaynakları</a>
     </center>
+<a href="https://www.nigez.com/" title="ТАТДиг төрки Интернет Эзләгеч">
+<img src="https://www.nigez.com/participate.php" alt="ТАТДиг төрки Интернет Эзләгеч">
+</a>
 </div>
 </body>
 </html>
