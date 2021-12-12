@@ -19,7 +19,7 @@ TATDig API-dan foydalanadigan veb-saytga misol
 # TATDig ئىنتېرنېت «ئىزدەش ماتورى».
 TATDig API نى ئىشلىتىدىغان تور بېكەتنىڭ مىسالى
 
-# TADDig internetes "kereső".
+# TATDig internetes "kereső".
 Példa egy TADDig API-t használó webhelyre
 
 # TATDig Internet "gözleg motory".
