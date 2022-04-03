@@ -28,3 +28,9 @@ Példa egy TADDig API-t használó webhelyre
 TATDig API ulanýan web sahypasynyň mysaly
 
 https://arama.nigez.com/
+
+Command line to clone this repo using ssh:
+git clone git@github.com:Nigez-com/TATDig-Arama-Motoru.git
+
+After this do not forget to install dependencies:
+composer install

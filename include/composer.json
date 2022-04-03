@@ -1,0 +1,24 @@
+{
+  "name":  "tatdig/add-tdcoin-php",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/tatdig/tdcoin-php.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/tatdig/bech32.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/tatdig/buffertools-php.git"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "tatdig/buffertools": "^0.5.0",
+    "tatdig/bech32": "^0.0.1",
+    "tatdig/tdcoin-php": "master"
+  }
+}

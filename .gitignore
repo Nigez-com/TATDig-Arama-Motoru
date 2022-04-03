@@ -1,1 +1,7 @@
 include/composer.phar
+awstats-icon
+awstatsicons
+xml
+include/composer.lock
+include/vendor/
+icon/
