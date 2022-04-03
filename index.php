@@ -10,9 +10,33 @@
 <script src="/js/functions.js"></script>
 </head>
 <body>
-<div id="content" class="vertical-center">
+<div id="leftcol20" class="column"></div>
+<div id="content" class="column">
     <center>
+<div id="user" class="right">
+<?php
+    require_once('include/config.inc.php');
+    require_once('include/users.php');
+    $addr = get_user();
+
+/*    if ( $addr === false ){ echo '<a href="/register.php">Register</a><a href="/signin.php">Signin</a>'; }
+    else { echo "<a href=\"signout.php\" title=\"Signout\">$addr</a>"; } */
+
+    if ( $addr === false ){ echo '<a href="javascript:reg_frm();"> Register </a><a href="javascript:signin_frm();"> Signin </a>'; }
+    else { echo '<a href="javascript:signout();" title="Sign out">'.$addr.'</a>'; }
+
+    function stypeHtml(){
+        $html='';
+        for( $i=0; $i< count(SEARCH_TYPES); $i++){
+            $html =$html. '<option'.( array_key_exists('stype', $_GET)&&$_GET['stype']==$i ? ' selected=true' : "" ).' value="'.$i.'">'.SEARCH_TYPES[$i].'</option>'.PHP_EOL;
+        }
+        return $html;
+    }
+
+?></div><br><br>
+
         <form>
+            <select id="stype" name="stype"><?php echo stypeHtml(); ?></select>
             <input id="search" name="search" type="search" value="<?php echo ( array_key_exists('search', $_GET) ? $_GET['search'] : "" ); ?>">
             <input type="submit" id="go" value="ileri!">
         </form>
@@ -21,26 +45,33 @@
 
 <?php }else{
     require_once('include/TATDig_API.php');
-    $results = get_tatdig_results(API_KEY,5,$page,trim($_GET['search']),HOSTNAME);
+    $results = get_tatdig_results(API_KEY,5,$page,trim($_GET['search']),HOSTNAME,$_GET['stype']);
 
     $xml = new DOMDocument( "1.0", "utf-8" );
-    $xml->loadXML($results);
+    $xml->loadXML($results);$xml->save('xml/search.xml');
     foreach ($xml->getElementsByTagName('result') as $result) {
 	echo "<div class=\"result\">";
 	echo "<a href=\"".$result->getAttribute('url')."\">".$result->getAttribute('title')."</a><br>";
 	echo "<p>".$result->getElementsByTagName('descr')[0]->textContent."</p>";
-	echo $result->getAttribute('title')."<br>";
+	if($_GET['stype']==1){
+	    echo date('Y-m-d H:i:s',strtotime($result->getAttribute('publishedDate')))."<br>";
+	    if(strpos($result->getAttribute('enclType'),'image')!== false)
+		if(!empty($result->getAttribute('enclUrl'))) echo '<img src="'.$result->getAttribute('enclUrl').'">';
+	}
 	echo "</div> <!-- result --> <hr>"; 
     }
  } ?>
-
+<br>Ve daha fazlası ...
         <h1>TATDig arama motoru</h1>
     <p>Çağrı denetleyicisi burada olabilir</p>
-    <p><a href="https://github.com/Nigez-com/TATDig-Arama-Motoru">Geliştirme kaynakları</a>
+    <p><a href="https://github.com/Nigez-com/TATDig-Arama-Motoru">Geliştirme kaynakları</a><br>
+    <a href="https://api.tatdig.org/examples/api_php_curl_example.txt" title="TATDig Turkic search engine">
+        Powered By TATDig
+    </a>
+
     </center>
-<a href="https://www.nigez.com/" title="ТАТДиг төрки Интернет Эзләгеч">
-<img src="https://www.nigez.com/participate.php" alt="ТАТДиг төрки Интернет Эзләгеч">
-</a>
+
 </div>
+<div id="rightcol20" class="column"></div>
 </body>
 </html>

@@ -7,17 +7,18 @@
 define('API_KEY','NZykTlrU3tcC1pn5'); //change this to your API key
 define('HOSTNAME','arama.nigez.com'); //change this for your domain
 
-function get_tatdig_results($apikey,$num,$page,$q,$host){
+function get_tatdig_results($apikey,$num,$page,$q,$host,$stype=0){
 
 //sunucu adresi
-$url = 'https://www.nigez.com/api_service.php';
+$url = 'https://api.tatdig.org/api_service.php';
 // sunucuya aktarım için alanların hazırlanması
 $fields = array(
             'apikey'=>urlencode($apikey),
             'num'=>urlencode($num),
             'page'=>urlencode($page),
             'q'=>urlencode($q),
-            'host'=>urlencode(HOSTNAME)
+            'host'=>urlencode(HOSTNAME),
+            'stype'=>$stype
 );
 
 //verileri uygun bir formata dönüştürmek
