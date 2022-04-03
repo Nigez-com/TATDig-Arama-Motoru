@@ -33,4 +33,5 @@ Command line to clone this repo using ssh:
 git clone git@github.com:Nigez-com/TATDig-Arama-Motoru.git
 
 After this do not forget to install dependencies:
+cd include
 composer install
