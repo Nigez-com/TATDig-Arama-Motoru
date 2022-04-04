@@ -57,6 +57,12 @@
 	    echo date('Y-m-d H:i:s',strtotime($result->getAttribute('publishedDate')))."<br>";
 	    if(strpos($result->getAttribute('enclType'),'image')!== false)
 		if(!empty($result->getAttribute('enclUrl'))) echo '<img src="'.$result->getAttribute('enclUrl').'">';
+	}elseif($_GET['stype']==2){
+	    if(strpos($result->getAttribute('enclType'),'image')!== false)
+		if(!empty($result->getAttribute('enclUrl'))) echo '<img src="'.$result->getAttribute('enclUrl').'">';
+	}elseif($_GET['stype']==3){
+	    if(strpos($result->getAttribute('enclType'),'video')!== false)
+		if(!empty($result->getAttribute('enclUrl'))) echo '<video controls><source src="'.$result->getAttribute('enclUrl').'"></video>'.PHP_EOL;
 	}
 	echo "</div> <!-- result --> <hr>"; 
     }

@@ -134,7 +134,7 @@ form input, form select{
   text-decoration:underline;
 }
 
-.result img{
+.result img, .result video{
     max-width: 15em;
     min-width: 15em;
 }

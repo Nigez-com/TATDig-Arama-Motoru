@@ -16,6 +16,7 @@ define('SEARCH_TYPES', array(
     'news',
     'image',
     'video',
+    'audio',
     'dictionary',
     'buy'
 ));
